@@ -1,0 +1,22 @@
+{
+  "compilerOptions": {
+    "experimentalDecorators": true,
+    "target": "es6",
+    "module": "commonjs",
+    "sourceMap": true,
+    "watch": false,
+    "lib": [
+      "es2017",
+      "dom",
+      "ES5"
+    ],
+    "allowJs": true,
+    "checkJs": false,
+    "types": ["mocha"],
+    "skipLibCheck": true,
+    "baseUrl": "."
+  },
+  "include": [
+    "typescript-to-es6/*.ts"
+  ]
+}
