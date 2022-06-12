@@ -2,7 +2,6 @@
   "name": "nyc-regression",
   "version": "1.0.0",
   "dependencies": {
-    "14": "^3.1.6",
     "@babel/cli": "^7.17.10",
     "@babel/preset-env": "^7.18.2",
     "@babel/runtime": "^7.18.3",
@@ -17,10 +16,10 @@
   "scripts": {
     "build-ts-to-es5": "tsc -p tsconfig.json",
     "build-ts-to-es6": "tsc -p tsconfig.es6.json",
-    "build-es6": "babel es6-with-source-maps -d build --source-maps true",
+    "build-es6": "babel es6-with-source-maps -d dist/es6 --source-maps true",
     "build": "npm run build-ts-to-es5 && npm run build-ts-to-es6 && npm run build-es6",
-    "test": "mocha --no-timeouts dist/es6-no-source-maps/ --recursive",
-    "test-nyc": "nyc  --reporter=json --reporter=html mocha --no-timeouts dist --recursive"
+    "test": "mocha --no-timeouts dist/*/*spec*",
+    "test-nyc": "nyc  --reporter=json --reporter=html mocha --no-timeouts build/*spec.js es6-no-source-maps/*spec.js typescript*/*spec.js"
   },
   "devDependencies": {
     "@babel/plugin-syntax-class-static-block": "^7.14.5",
